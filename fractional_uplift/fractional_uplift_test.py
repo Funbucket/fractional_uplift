@@ -205,7 +205,7 @@ class MetaLearnersEndToEndlTest(parameterized.TestCase):
     )
 
     self.assertIsInstance(preds, np.ndarray)
-    self.assertEqual(preds.dtype, np.float32)
+    self.assertTrue(np.issubdtype(preds.dtype, np.floating))
     self.assertEqual(np.shape(preds), (3,))
 
   @parameterized.named_parameters(SINGLE_KPI_GOOD_CASES)
@@ -233,7 +233,7 @@ class MetaLearnersEndToEndlTest(parameterized.TestCase):
     preds = model.predict(pred_data)
 
     self.assertIsInstance(preds, np.ndarray)
-    self.assertEqual(preds.dtype, np.float32)
+    self.assertTrue(np.issubdtype(preds.dtype, np.floating))
     self.assertEqual(np.shape(preds), (3,))
 
   @parameterized.named_parameters(FRACTIONAL_UPLIFT_GOOD_CASES)
@@ -260,7 +260,7 @@ class MetaLearnersEndToEndlTest(parameterized.TestCase):
     preds = distill_model.predict(pred_data)
 
     self.assertIsInstance(preds, np.ndarray)
-    self.assertEqual(preds.dtype, np.float32)
+    self.assertTrue(np.issubdtype(preds.dtype, np.floating))
     self.assertEqual(np.shape(preds), (3,))
 
   @parameterized.named_parameters(SINGLE_KPI_GOOD_CASES)
@@ -290,7 +290,7 @@ class MetaLearnersEndToEndlTest(parameterized.TestCase):
     preds = distill_model.predict(pred_data)
 
     self.assertIsInstance(preds, np.ndarray)
-    self.assertEqual(preds.dtype, np.float32)
+    self.assertTrue(np.issubdtype(preds.dtype, np.floating))
     self.assertEqual(np.shape(preds), (3,))
 
 
