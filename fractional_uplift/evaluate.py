@@ -444,4 +444,4 @@ def calculate_auc(
   with TemporaryDataframeCopy(data) as tmp_data:
     sort_col = sort_col or x_col
     tmp_data = tmp_data.sort_values(sort_col)
-    return np.trapz(tmp_data[y_col].values, tmp_data[x_col].values)
+    return np.trapezoid(tmp_data[y_col].values, tmp_data[x_col].values)
